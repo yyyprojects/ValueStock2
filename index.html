@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is a Value Stock? - An Infographic Guide</title>
+    <!-- Chosen Palette: Energetic & Playful -->
+    <!-- Application Structure Plan: The infographic follows a linear, scrollable narrative to guide the user through the concept of value stocks. It begins with a vibrant hero section to capture attention, followed by a "What is it?" section that uses a simple analogy and a key concept. The "Key Traits" and "Why Undervalued?" sections use card layouts for digestible information. The "Investor's Toolkit" is presented as a detailed table, crucial for explaining multiple metrics concisely. The "Value vs. Growth" section uses a two-column comparison. Finally, "Advantages & Challenges" and "Examples" provide balanced insights and concrete instances. This structure prioritizes clear, sequential learning, making complex financial concepts accessible. -->
+    <!-- Visualization & Content Choices: 1. Core Concept -> Goal: Inform -> Visualization: Textual explanation with bolded key concept -> Justification: Best for introducing a fundamental idea clearly. 2. Key Traits -> Goal: Inform/Organize -> Visualization: HTML cards with Unicode icons -> Justification: Visually appealing and breaks down characteristics into digestible chunks. 3. Why Undervalued? -> Goal: Inform/Organize -> Visualization: HTML cards -> Justification: Clearly lists reasons for undervaluation. 4. Investor's Toolkit (Metrics) -> Goal: Inform/Organize -> Visualization: HTML table -> Justification: Most effective for presenting multiple metrics with definitions, preferences, and caveats in a structured way. 5. Value vs. Growth Comparison -> Goal: Compare -> Visualization: Two-column HTML layout with bullet points -> Justification: Provides a clear, direct side-by-side comparison of two contrasting investment philosophies. 6. Advantages & Challenges -> Goal: Inform -> Visualization: Two distinct HTML cards with bullet points -> Justification: Presents pros and cons clearly and concisely. 7. Prominent Examples & Industries -> Goal: Inform -> Visualization: Text blocks and lists -> Justification: Provides concrete, illustrative examples. All choices explicitly avoid SVG and Mermaid JS. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F7F7F7; /* Light grey background */
+            color: #333333; /* Dark grey text */
+        }
+        .hero-bg {
+            background-color: #FF6B6B; /* Primary reddish-orange */
+        }
+        .accent-primary {
+            color: #FF6B6B; /* Primary reddish-orange */
+        }
+        .accent-secondary {
+            color: #4ECDC4; /* Teal accent */
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #333333;
+        }
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: #555555;
+            max-width: 800px;
+            margin: 1rem auto 0;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            border: 1px solid #E0E0E0;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            .chart-container {
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <main class="container mx-auto px-4 py-8 md:py-16">
+
+        <section id="hero" class="hero-bg text-white text-center py-20 rounded-xl shadow-lg">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                Demystifying the <span class="text-yellow-300">Value Stock</span>
+            </h1>
+            <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto">
+                Your visual guide to understanding value investing in the U.S. stock market.
+            </p>
+        </section>
+
+        <section id="what-is-it" class="my-20 text-center">
+            <h2 class="section-title">What is a Value Stock?</h2>
+            <p class="section-subtitle">
+                At its core, value investing is about finding hidden gems: solid companies whose stock prices are currently undervalued by the market.
+            </p>
+            <div class="mt-12 max-w-4xl mx-auto card">
+                <p class="text-5xl mb-4">🏷️</p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Imagine you're buying a high-quality item on a clearance sale. You know its true worth is much higher than the price tag.
+                </p>
+                <p class="mt-4 text-xl font-semibold text-gray-800">
+                    A <span class="accent-primary">Value Stock</span> is a share of a fundamentally strong company that is trading at a price significantly <span class="underline">below its intrinsic (true) worth</span>.
+                </p>
+                <p class="mt-4 text-lg text-gray-700 leading-relaxed">
+                    Value investors believe the market isn't always perfect. Temporary challenges, negative news, or simply being overlooked can cause a stock price to drop below its actual value. They buy these "bargains" and patiently wait for the market to recognize their true worth.
+                </p>
+            </div>
+        </section>
+
+        <section id="characteristics" class="my-20">
+            <h2 class="section-title text-center">Key Traits of a Value Stock</h2>
+            <p class="section-subtitle text-center">
+                Value stocks aren't just "cheap." They possess specific qualities that make them attractive to discerning investors.
+            </p>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card text-center">
+                    <p class="text-4xl mb-3">💰</p>
+                    <h3 class="font-bold text-xl text-gray-800">Strong Financial Health</h3>
+                    <p class="mt-2 text-gray-600">Stable earnings, consistent profits, and robust cash flow generation.</p>
+                </div>
+                <div class="card text-center">
+                    <p class="text-4xl mb-3">🕰️</p>
+                    <h3 class="font-bold text-xl text-gray-800">Mature & Stable</h3>
+                    <p class="mt-2 text-gray-600">Well-established businesses in predictable or cyclical industries.</p>
+                </div>
+                <div class="card text-center">
+                    <p class="text-4xl mb-3">💸</p>
+                    <h3 class="font-bold text-xl text-gray-800">Shareholder Friendly</h3>
+                    <p class="mt-2 text-gray-600">Often pay consistent dividends or engage in share buybacks.</p>
+                </div>
+                <div class="card text-center">
+                    <p class="text-4xl mb-3">🛡️</p>
+                    <h3 class="font-bold text-xl text-gray-800">Economic Moats</h3>
+                    <p class="mt-2 text-gray-600">Possess competitive advantages that protect their profitability.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-undervalued" class="my-20 text-center">
+            <h2 class="section-title">Why Do Good Companies Go On Sale?</h2>
+            <p class="section-subtitle text-center">
+                Several factors can lead to a fundamentally strong company being undervalued by the market.
+            </p>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="card">
+                    <p class="text-4xl mb-3">📉</p>
+                    <h3 class="font-bold text-xl text-gray-800 mb-2">Market Overreaction</h3>
+                    <p class="text-gray-600">Investors panic-sell due to minor bad news, pushing price below true worth.</p>
+                </div>
+                <div class="card">
+                    <p class="text-4xl mb-3">🚧</p>
+                    <h3 class="font-bold text-xl text-gray-800 mb-2">Temporary Problems</h3>
+                    <p class="text-gray-600">Company faces solvable issues (e.g., product recall) that scare short-term investors.</p>
+                </div>
+                <div class="card">
+                    <p class="text-4xl mb-3">👻</p>
+                    <h3 class="font-bold text-xl text-gray-800 mb-2">Overlooked or "Boring"</h3>
+                    <p class="text-gray-600">Stable, profitable companies in unhyped industries get ignored by the market.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="investor-toolkit" class="my-20">
+            <h2 class="section-title text-center">The Investor's Toolkit: Finding Value</h2>
+            <p class="section-subtitle text-center">
+                Value investors use rigorous analysis and specific financial metrics to identify truly undervalued companies.
+            </p>
+            <div class="mt-12 max-w-6xl mx-auto card">
+                <h3 class="font-bold text-2xl text-gray-800 mb-4">Key Valuation Metrics & Their Role</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead>
+                            <tr class="bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                <th class="py-3 px-4 border-b">Metric</th>
+                                <th class="py-3 px-4 border-b">What it is</th>
+                                <th class="py-3 px-4 border-b">Value Investor Preference</th>
+                                <th class="py-3 px-4 border-b">Why it Matters</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-3 px-4 border-b text-gray-800 font-medium">Price-to-Earnings (P/E) Ratio</td>
+                                <td class="py-3 px-4 border-b text-gray-700">Stock price relative to company's profit per share.</td>
+                                <td class="py-3 px-4 border-b text-gray-700">Low (e.g., below 15-20)</td>
+                                <td class="py-3 px-4 border-b text-gray-700">Suggests you're paying less for each dollar of profit.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 border-b text-gray-800 font-medium">Price-to-Book (P/B) Ratio</td>
+                                <td class="py-3 px-4 border-b text-gray-700">Market value relative to book value (assets - liabilities).</td>
+                                <td class="py-3 px-4 border-b text-gray-700">Low (e.g., below 1)</td>
+                                <td class="py-3 px-4 border-b text-gray-700">Could mean buying assets for less than accounting value.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 border-b text-gray-800 font-medium">Free Cash Flow (FCF)</td>
+                                <td class="py-3 px-4 border-b text-gray-700">Cash generated after operations & investments.</td>
+                                <td class="py-3 px-4 border-b text-gray-700">High and consistent</td>
+                                <td class="py-3 px-4 border-b text-gray-700">Shows financial flexibility, ability to pay dividends.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 border-b text-gray-800 font-medium">Dividend Yield</td>
+                                <td class="py-3 px-4 border-b text-gray-700">Annual dividend as % of stock price.</td>
+                                <td class="py-3 px-4 border-b text-gray-700">Higher than average, sustainable</td>
+                                <td class="py-3 px-4 border-b text-gray-700">Provides regular income while waiting for price rise.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="mt-6 text-gray-700 leading-relaxed">
+                    Beyond numbers, investors also assess <strong>management quality</strong>, <strong>competitive advantages</strong> (economic moats), and the overall <strong>industry outlook</strong>. The final step is applying a <strong>"Margin of Safety"</strong>: buying at a significant discount to estimated intrinsic value to protect against unforeseen issues.
+                </p>
+            </div>
+        </section>
+
+        <section id="comparison" class="my-20 text-center">
+            <h2 class="section-title">Value vs. Growth: Two Investment Paths</h2>
+            <p class="section-subtitle text-center">
+                While both aim for profit, value and growth investing have fundamentally different approaches and target companies.
+            </p>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="card border-l-4 border-yellow-500">
+                    <h3 class="font-bold text-2xl text-gray-800 mb-3">Value Investing</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><strong>Focus:</strong> Undervalued companies.</li>
+                        <li><strong>Company Type:</strong> Mature, stable businesses.</li>
+                        <li><strong>Growth:</strong> Slower, more predictable.</li>
+                        <li><strong>Dividends:</strong> Often pays consistent dividends.</li>
+                        <li><strong>Risk:</strong> Generally considered less risky.</li>
+                        <li><strong>Time:</strong> Requires patience.</li>
+                    </ul>
+                </div>
+                <div class="card border-l-4 border-teal-500">
+                    <h3 class="font-bold text-2xl text-gray-800 mb-3">Growth Investing</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><strong>Focus:</strong> High future growth potential.</li>
+                        <li><strong>Company Type:</strong> Younger, innovative, rapidly expanding.</li>
+                        <li><strong>Growth:</strong> Faster, but less predictable.</li>
+                        <li><strong>Dividends:</strong> Often reinvests profits, pays few/no dividends.</li>
+                        <li><strong>Risk:</strong> Generally considered higher risk.</li>
+                        <li><strong>Time:</strong> Can offer quicker returns, but also quicker drops.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="advantages-challenges" class="my-20 text-center">
+            <h2 class="section-title">The Upside & Downside</h2>
+            <p class="section-subtitle">
+                Understanding the benefits and challenges helps in deciding if value investing is right for you.
+            </p>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="card bg-green-50 text-green-800">
+                    <h3 class="font-bold text-2xl mb-3">Benefits ✨</h3>
+                    <ul class="list-disc list-inside text-left space-y-2">
+                        <li><strong>Lower Risk:</strong> Safety net from buying at a discount.</li>
+                        <li><strong>Long-Term Potential:</strong> Significant gains as market recognizes true value.</li>
+                        <li><strong>Steady Income:</strong> Many value stocks pay regular dividends.</li>
+                        <li><strong>Solid Businesses:</strong> Focus on fundamentally strong companies.</li>
+                    </ul>
+                </div>
+                <div class="card bg-red-50 text-red-800">
+                    <h3 class="font-bold text-2xl mb-3">Challenges ⚠️</h3>
+                    <ul class="list-disc list-inside text-left space-y-2">
+                        <li><strong>Time-Consuming Research:</strong> Requires deep dives into financials.</li>
+                        <li><strong>Patience is Key:</strong> Can take years for returns to materialize.</li>
+                        <li><strong>"Value Traps":</strong> Risk of buying a stock that's cheap for a *permanent* bad reason.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="examples" class="my-20 text-center">
+            <h2 class="section-title">U.S. Value Stocks & Industries</h2>
+            <p class="section-subtitle">
+                Value opportunities can be found across various mature sectors in the U.S. economy.
+            </p>
+            <div class="mt-12 max-w-4xl mx-auto card">
+                <h3 class="font-bold text-2xl text-gray-800 mb-4">Illustrative U.S. Value Companies:</h3>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Companies like <strong class="accent-primary">Berkshire Hathaway</strong>, <strong class="accent-primary">Target</strong>, <strong class="accent-primary">General Motors</strong>, <strong class="accent-primary">Johnson & Johnson</strong>, <strong class="accent-primary">Intel</strong>, <strong class="accent-primary">AT&T</strong>, and <strong class="accent-primary">ExxonMobil</strong> have often been considered value stocks at different times.
+                </p>
+                <h3 class="font-bold text-2xl text-gray-800 mb-4">Common Industries for Value Stocks:</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-1 mt-4">
+                    <li>Financials (banks, insurance)</li>
+                    <li>Healthcare</li>
+                    <li>Industrials (manufacturing, machinery)</li>
+                    <li>Energy (oil & gas)</li>
+                    <li>Consumer Staples (food, household goods)</li>
+                    <li>Utilities (electricity, water)</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-500 mt-20 py-8 border-t border-gray-200">
+            <p>This infographic is for educational purposes only and should not be considered financial advice.</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
